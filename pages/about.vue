@@ -1,6 +1,12 @@
 <template>
+
   <section class="container">
-    <img src="../assets/img/logo.png" alt="Nuxt.js Logo" class="logo" />
+
+    <p>
+      <button @click="showLoginError">Notif me!</button>
+    </p>
+
+    <img src="../assets/img/logo.png" alt="Nuxt.js Logo" class="logo"/>
     <h1 class="title">
       This page is loaded from the {{ name }}
     </h1>
@@ -13,34 +19,49 @@
   </section>
 </template>
 <script>
-export default {
-  data ({ req }) {
-    return {
-      name: req ? 'server' : 'client'
-    }
-  },
-  head () {
-    return {
-      title: `About Page (${this.name}-side)`
+  let miniToastr
+  if (process.BROWSER_BUILD) {
+    miniToastr = require('mini-toastr')
+  }
+
+  export default {
+    data ({req}) {
+      return {
+        name: req ? 'server' : 'client'
+      }
+    },
+    head () {
+      return {
+        title: `About Page (${this.name}-side)`
+      }
+    },
+
+    mounted () {
+      miniToastr.init()
+    },
+    notifications: {
+      showLoginError: {
+        title: 'Welcome!',
+        message: 'Hello from nuxt.js',
+        type: 'info'
+      }
     }
   }
-}
 </script>
 
 <style scoped>
-.title
-{
-  margin-top: 50px;
-}
-.info
-{
-  font-weight: 300;
-  color: #9aabb1;
-  margin: 0;
-  margin-top: 10px;
-}
-.button
-{
-  margin-top: 50px;
-}
+  .title {
+    margin-top: 50px;
+  }
+
+  .info {
+    font-weight: 300;
+    color: #9aabb1;
+    margin: 0;
+    margin-top: 10px;
+  }
+
+  .button {
+    margin-top: 50px;
+  }
 </style>
