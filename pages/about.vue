@@ -1,7 +1,7 @@
 <template>
 
   <section class="container">
-
+    <mu-raised-button label="Default" class="demo-raised-button"/>
     <p>
       <button @click="showLoginError">Notif me!</button>
     </p>

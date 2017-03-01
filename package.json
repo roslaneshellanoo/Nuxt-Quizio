@@ -17,8 +17,6 @@
   },
   "devDependencies": {
     "babel-eslint": "^7.1.1",
-    "coffee-loader": "^0.7.3",
-    "coffee-script": "^1.12.4",
     "eslint": "^3.15.0",
     "eslint-config-standard": "^6.2.1",
     "eslint-loader": "^1.6.1",
@@ -28,8 +26,6 @@
     "keycode": "^2.1.8",
     "muse-ui": "^2.0.0-rc.5",
     "node-sass": "^4.5.0",
-    "pug": "^2.0.0-beta6",
-    "pug-loader": "^2.3.0",
     "sass-loader": "^6.0.2"
   }
 }

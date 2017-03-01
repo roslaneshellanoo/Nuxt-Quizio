@@ -30,7 +30,7 @@ module.exports = {
    */
   plugins: [
     '~plugins/vue-notifications',
-    //'~plugins/muse-ui'
+    '~plugins/muse-ui'
   ],
 
   build: {
