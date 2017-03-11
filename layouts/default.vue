@@ -38,6 +38,13 @@
       <main>
 
         <v-sidebar class="blue darken-3" drawer v-model="sidebar">
+          <v-toolbar>
+            <v-toolbar-side-icon @click.native.stop="sidebar = !sidebar"/>
+            <v-toolbar-title class="hidden-sm-and-down">
+              Toolbar
+            </v-toolbar-title>
+          </v-toolbar>
+
           <v-list dense>
             <v-list-item v-for="item in items">
               <v-list-tile>
@@ -69,7 +76,14 @@
     data () {
       return {
         sidebar: false,
-        items: []
+        items: [
+          {
+            title: 'Main title example'
+          },
+          {
+            title: 'Main title example2'
+          }
+        ]
       }
     }
   }
