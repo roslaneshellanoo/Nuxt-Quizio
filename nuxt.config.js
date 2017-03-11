@@ -11,15 +11,15 @@ module.exports = {
     ],
     link: [
       {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'},
-      {rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto'}
+      {rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons'}
     ]
   },
   /*
    ** Global CSS
    */
   css: [
-    {src: 'muse-ui/dist/muse-ui.css'},
-    {src: '~assets/css/main.scss', lang: 'scss'}
+    {src: '~assets/css/main.scss', lang: 'scss'},
+    {src: 'vuetify/dist/vuetify.min.css'}
   ],
   /*
    ** Customize the progress-bar color
@@ -29,13 +29,13 @@ module.exports = {
    ** Build configuration
    */
   plugins: [
-    '~plugins/vue-notifications',
-    '~plugins/muse-ui'
+
+     '~plugins/vuetify'
   ],
 
   build: {
 
-    vendor: ['muse-ui', 'vue-notifications'],
+    vendor: ['vuetify'],
     /*
      ** Run ESLINT on save
      */

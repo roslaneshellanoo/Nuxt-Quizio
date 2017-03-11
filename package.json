@@ -26,6 +26,7 @@
     "keycode": "^2.1.8",
     "muse-ui": "^2.0.0-rc.5",
     "node-sass": "^4.5.0",
-    "sass-loader": "^6.0.2"
+    "sass-loader": "^6.0.2",
+    "vuetify": "^0.8.10"
   }
 }

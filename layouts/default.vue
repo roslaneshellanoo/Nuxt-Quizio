@@ -1,7 +1,37 @@
 <template>
   <div>
-    <nuxt/>
-    <my-footer/>
+    <v-app top-toolbar footer>
+
+      <header>
+        <v-toolbar>
+          <v-toolbar-side-icon />
+          <v-toolbar-title class="hidden-sm-and-down">Toolbar</v-toolbar-title>
+          <v-spacer />
+          <v-btn icon dark>
+            <v-icon>account_circle</v-icon>
+          </v-btn>
+          <v-btn icon dark>
+            <v-icon>favorite</v-icon>
+          </v-btn>
+          <v-btn icon dark>
+            <v-icon>more_vert</v-icon>
+          </v-btn>
+        </v-toolbar>
+      </header>
+
+      <main>
+        <v-content>
+          <v-container fluid>
+            <nuxt/>
+          </v-container>
+        </v-content>
+      </main>
+
+      <v-footer>
+        <div class="text-xs-right">© 2016</div>
+      </v-footer>
+
+    </v-app>
   </div>
 </template>
 
@@ -20,7 +50,6 @@ export default {
 {
   margin: 0;
   width: 100%;
-  padding: 100px 0;
   text-align: center;
 }
 

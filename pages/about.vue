@@ -1,11 +1,9 @@
 <template>
 
   <section class="container">
-    <mu-raised-button label="Default" class="demo-raised-button"/>
-    <p>
-      <button @click="showLoginError">Notif me!</button>
-    </p>
-
+    <div>
+      <v-btn small primary dark>Small Button</v-btn>
+    </div>
     <img src="../assets/img/logo.png" alt="Nuxt.js Logo" class="logo"/>
     <h1 class="title">
       This page is loaded from the {{ name }}
@@ -19,10 +17,10 @@
   </section>
 </template>
 <script>
-  let miniToastr
-  if (process.BROWSER_BUILD) {
-    miniToastr = require('mini-toastr')
-  }
+//  let miniToastr
+//  if (process.BROWSER_BUILD) {
+//    miniToastr = require('mini-toastr')
+//  }
 
   export default {
     data ({req}) {
@@ -37,14 +35,7 @@
     },
 
     mounted () {
-      miniToastr.init()
-    },
-    notifications: {
-      showLoginError: {
-        title: 'Welcome!',
-        message: 'Hello from nuxt.js',
-        type: 'info'
-      }
+      // miniToastr.init()
     }
   }
 </script>
