@@ -1,71 +1,70 @@
 <template>
 
+  <v-app top-toolbar footer :class="[ this.$route.name + '-page']">
+    <header>
+      <v-toolbar>
+        <v-toolbar-side-icon @click.native.stop="sidebar = !sidebar"/>
+        <v-toolbar-title class="hidden-sm-and-down">
+          Quizio.io
+        </v-toolbar-title>
 
-    <v-app top-toolbar footer >
-      <header>
-        <v-toolbar>
+        <!--<v-toolbar-items>-->
+
+        <!--<v-toolbar-item>-->
+        <!--gfhfg-->
+        <!--</v-toolbar-item>-->
+
+        <!--<v-toolbar-item>-->
+        <!--About-->
+        <!--</v-toolbar-item>-->
+
+        <!--</v-toolbar-items>-->
+
+        <v-spacer/>
+
+        <v-btn icon dark>
+          <v-icon>account_circle</v-icon>
+        </v-btn>
+        <v-btn icon dark>
+          <v-icon>favorite</v-icon>
+        </v-btn>
+        <v-btn icon dark>
+          <v-icon>more_vert</v-icon>
+        </v-btn>
+      </v-toolbar>
+    </header>
+
+    <main>
+
+      <v-sidebar class="" drawer v-model="sidebar">
+        <v-toolbar class="sidebar-logo">
           <v-toolbar-side-icon @click.native.stop="sidebar = !sidebar"/>
           <v-toolbar-title class="hidden-sm-and-down">
             Quizio.io
           </v-toolbar-title>
-
-          <!--<v-toolbar-items>-->
-
-            <!--<v-toolbar-item>-->
-              <!--gfhfg-->
-            <!--</v-toolbar-item>-->
-
-            <!--<v-toolbar-item>-->
-              <!--About-->
-            <!--</v-toolbar-item>-->
-
-          <!--</v-toolbar-items>-->
-
-          <v-spacer/>
-
-          <v-btn icon dark>
-            <v-icon>account_circle</v-icon>
-          </v-btn>
-          <v-btn icon dark>
-            <v-icon>favorite</v-icon>
-          </v-btn>
-          <v-btn icon dark>
-            <v-icon>more_vert</v-icon>
-          </v-btn>
         </v-toolbar>
-      </header>
 
-      <main>
+        <v-list dense>
+          <v-list-item v-for="item in items">
+            <v-list-tile ripple>
+              <v-list-tile-title  v-text="item.title"/>
+            </v-list-tile>
+          </v-list-item>
+        </v-list>
+      </v-sidebar>
 
-        <v-sidebar class="" drawer v-model="sidebar">
-          <v-toolbar class="sidebar-logo">
-            <v-toolbar-side-icon @click.native.stop="sidebar = !sidebar"/>
-            <v-toolbar-title class="hidden-sm-and-down">
-              Quizio.io
-            </v-toolbar-title>
-          </v-toolbar>
+      <v-content>
+        <v-container fluid>
+          <nuxt/>
+        </v-container>
+      </v-content>
+    </main>
 
-          <v-list dense>
-            <v-list-item v-for="item in items">
-              <v-list-tile ripple>
-                <v-list-tile-title  v-text="item.title"/>
-              </v-list-tile>
-            </v-list-item>
-          </v-list>
-        </v-sidebar>
+    <v-footer>
+      <div class="text-xs-right">© 2016</div>
+    </v-footer>
 
-        <v-content>
-          <v-container fluid>
-            <nuxt/>
-          </v-container>
-        </v-content>
-      </main>
-
-      <v-footer>
-        <div class="text-xs-right">© 2016</div>
-      </v-footer>
-
-    </v-app>
+  </v-app>
 
 </template>
 

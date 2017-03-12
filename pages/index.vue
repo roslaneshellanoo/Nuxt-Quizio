@@ -1,7 +1,13 @@
 <template>
   <div>
     <div class="main-banner">
-
+      <div id="particles-js"></div>
+      <div class="text-center mb3">
+        <img src="~assets/img/logo.svg" alt="" style="max-width: 300px">
+      </div>
+      <h4 class="home-title white--text text-center mb4">
+        Test your skills and <br> improve your knowledge!
+      </h4>
     </div>
     <section class="container">
       <img src="../assets/img/logo.png" alt="Nuxt.js Logo" class="logo" />

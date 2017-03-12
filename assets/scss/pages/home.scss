@@ -1,0 +1,14 @@
+.index-page{
+  .main-banner {
+    background: url(~assets/img/cosmos.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    padding: 9rem 0;
+    position: relative;
+
+  }
+}
+
+.index-page.with.top-toolbar main>.content {
+  padding-top: 0;
+}
