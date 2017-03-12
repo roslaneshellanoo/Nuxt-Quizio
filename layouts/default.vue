@@ -4,8 +4,10 @@
     <header>
       <v-toolbar>
         <v-toolbar-side-icon @click.native.stop="sidebar = !sidebar"/>
-        <v-toolbar-title class="">
-          Quizio.io
+        <v-toolbar-title>
+          <nuxt-link class="white--text" to="/">
+            Quizio.io
+          </nuxt-link>
         </v-toolbar-title>
         <v-toolbar-items class="hidden-md-and-down">
           <v-toolbar-item v-for="item in items" ripple  :router="true" :href="item.href">
