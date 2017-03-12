@@ -4,30 +4,14 @@
     <header>
       <v-toolbar>
         <v-toolbar-side-icon @click.native.stop="sidebar = !sidebar"/>
-        <v-toolbar-title class="hidden-sm-and-down">
+        <v-toolbar-title class="">
           Quizio.io
         </v-toolbar-title>
-
-        <!--<v-toolbar-items>-->
-
-        <!--<v-toolbar-item>-->
-        <!--gfhfg-->
-        <!--</v-toolbar-item>-->
-
-        <!--<v-toolbar-item>-->
-        <!--About-->
-        <!--</v-toolbar-item>-->
-
-        <!--</v-toolbar-items>-->
-
-        <v-spacer/>
-
-        <v-btn icon dark>
-          <v-icon>account_circle</v-icon>
-        </v-btn>
-        <v-btn icon dark>
-          <v-icon>favorite</v-icon>
-        </v-btn>
+        <v-toolbar-items class="hidden-md-and-down">
+          <v-toolbar-item v-for="item in items" ripple  :router="true" :href="item.href">
+              {{item.title}}
+          </v-toolbar-item>
+        </v-toolbar-items>
         <v-btn icon dark>
           <v-icon>more_vert</v-icon>
         </v-btn>
@@ -39,7 +23,7 @@
       <v-sidebar class="" drawer v-model="sidebar">
         <v-toolbar class="sidebar-logo">
           <v-toolbar-side-icon @click.native.stop="sidebar = !sidebar"/>
-          <v-toolbar-title class="hidden-sm-and-down">
+          <v-toolbar-title class="">
             Quizio.io
           </v-toolbar-title>
         </v-toolbar>
@@ -78,10 +62,12 @@
         sidebar: false,
         items: [
           {
-            title: 'Javascript Quiz'
+            title: 'Javascript Quiz',
+            href: '/quiz'
           },
           {
-            title: 'Main title example2'
+            title: 'About',
+            href: '/about'
           }
         ]
       }
