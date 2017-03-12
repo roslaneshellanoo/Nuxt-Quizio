@@ -12,6 +12,18 @@ html, body
 
 }
 
+header {
+  .toolbar {
+    background: linear-gradient(90deg,#134bb3,#4ab3de);
+  }
+}
+
+.sidebar {
+  .toolbar {
+    background: linear-gradient(90deg,#134bb3,#3185cb);
+  }
+}
+
 footer
 {
   padding: 20px;

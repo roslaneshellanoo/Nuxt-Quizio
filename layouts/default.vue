@@ -6,20 +6,20 @@
         <v-toolbar>
           <v-toolbar-side-icon @click.native.stop="sidebar = !sidebar"/>
           <v-toolbar-title class="hidden-sm-and-down">
-            Toolbar
+            Quizio.io
           </v-toolbar-title>
 
-          <v-toolbar-items>
+          <!--<v-toolbar-items>-->
 
-            <v-toolbar-item>
-              gfhfg
-            </v-toolbar-item>
+            <!--<v-toolbar-item>-->
+              <!--gfhfg-->
+            <!--</v-toolbar-item>-->
 
-            <v-toolbar-item>
-              About
-            </v-toolbar-item>
+            <!--<v-toolbar-item>-->
+              <!--About-->
+            <!--</v-toolbar-item>-->
 
-          </v-toolbar-items>
+          <!--</v-toolbar-items>-->
 
           <v-spacer/>
 
@@ -37,11 +37,11 @@
 
       <main>
 
-        <v-sidebar class=" " drawer v-model="sidebar">
-          <v-toolbar>
+        <v-sidebar class="" drawer v-model="sidebar">
+          <v-toolbar class="sidebar-logo">
             <v-toolbar-side-icon @click.native.stop="sidebar = !sidebar"/>
             <v-toolbar-title class="hidden-sm-and-down">
-              Toolbar
+              Quizio.io
             </v-toolbar-title>
           </v-toolbar>
 

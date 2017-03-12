@@ -1,10 +1,20 @@
 <template>
 
   <section class="container">
-    <div>
-      <v-btn small primary dark>Small Button</v-btn>
-    </div>
+
     <img src="../assets/img/logo.png" alt="Nuxt.js Logo" class="logo"/>
+    <br>
+    <br>
+    <div>
+      <v-radio id="test6" name="test6" label="Testing 6" gap></v-radio>
+      <v-radio id="test7" name="test6" label="Testing 7" gap></v-radio>
+      <v-radio id="test8" name="test6" label="Testing 8" gap></v-radio>
+      <v-radio id="test9" name="test6" label="Testing 9" gap></v-radio>
+    </div>
+    <div>
+      <v-btn primary dark>Next</v-btn small>
+    </div>
+
     <h1 class="title">
       This page is loaded from the {{ name }}
     </h1>
