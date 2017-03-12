@@ -37,7 +37,7 @@
 
       <main>
 
-        <v-sidebar class="blue darken-3" drawer v-model="sidebar">
+        <v-sidebar class=" " drawer v-model="sidebar">
           <v-toolbar>
             <v-toolbar-side-icon @click.native.stop="sidebar = !sidebar"/>
             <v-toolbar-title class="hidden-sm-and-down">
@@ -47,8 +47,8 @@
 
           <v-list dense>
             <v-list-item v-for="item in items">
-              <v-list-tile>
-                <v-list-tile-title v-text="item.title"/>
+              <v-list-tile ripple>
+                <v-list-tile-title  v-text="item.title"/>
               </v-list-tile>
             </v-list-item>
           </v-list>
@@ -78,7 +78,7 @@
         sidebar: false,
         items: [
           {
-            title: 'Main title example'
+            title: 'Javascript Quiz'
           },
           {
             title: 'Main title example2'
