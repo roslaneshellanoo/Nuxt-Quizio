@@ -1,7 +1,7 @@
 <template>
 
-  <div>
-    <v-app top-toolbar footer>
+
+    <v-app top-toolbar footer >
       <header>
         <v-toolbar>
           <v-toolbar-side-icon @click.native.stop="sidebar = !sidebar"/>
@@ -66,7 +66,7 @@
       </v-footer>
 
     </v-app>
-  </div>
+
 </template>
 
 <script>
@@ -75,6 +75,7 @@
 
     data () {
       return {
+        routeclass: this.$route.name,
         sidebar: false,
         items: [
           {

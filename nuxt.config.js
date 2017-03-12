@@ -18,7 +18,7 @@ module.exports = {
    ** Global CSS
    */
   css: [
-    {src: '~assets/css/main.scss', lang: 'scss'},
+    {src: '~assets/scss/main.scss', lang: 'scss'},
     {src: 'vuetify/dist/vuetify.min.css'}
   ],
   /*
