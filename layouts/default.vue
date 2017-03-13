@@ -65,7 +65,7 @@
         items: [
           {
             title: 'Javascript Quiz',
-            href: '/quiz'
+            href: '/quiz/javascript'
           },
           {
             title: 'About',
@@ -78,11 +78,6 @@
 </script>
 
 <style>
-  .container {
-    margin: 0;
-    width: 100%;
-    text-align: center;
-  }
 
   .button, .button:visited {
     display: inline-block;
