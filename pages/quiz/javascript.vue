@@ -3,6 +3,35 @@
     <h1 class="title">
       Javascript quiz page
     </h1>
+    <div class="quiz-content">
+      <div class="quiz-loop" v-for="(question, index) in randomQuiz">
+        <!-- Hide all questions, show only the one with index === to current question index -->
+        <div class="quiz-block" v-show="index === questionIndex">
+          <h4 class="question-title">
+            <span v-html="question.text"></span>
+          </h4>
+          <div class="text-code" v-if="question.textcode">
+            <pre><code>{{question.textcode}}</code></pre>
+          </div>
+          <br>
+
+          <ul class="answers-block">
+            <li v-for="response in question.responses">
+              <div>
+                <v-radio
+                  :name="'list-' + index"
+                  :id="'list-' + index + response.id"
+                  v-model="userResponses[index]"
+                  :label="response.text"
+                  gap></v-radio>
+              </div>
+
+            </li>
+          </ul>
+
+        </div>
+      </div>
+    </div>
   </section>
 </template>
 <script>
@@ -25,11 +54,11 @@
       }
     },
     mounted: function () {
-      console.log(this.userResponses)
+      console.log(this.randomQuiz)
     },
     computed: {
-      randomQuiz: function (e) {
-        return this.questions.sort(function () {
+      randomQuiz: function () {
+        return this.quiz.questions.sort(function () {
           return 0.5 - Math.random()
         })
       }
