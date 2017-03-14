@@ -2,28 +2,35 @@
 
   <section class="container">
 
-    <img src="../assets/img/logo.png" alt="Nuxt.js Logo" class="logo"/>
-    <br>
-    <br>
-    <div>
-      <v-radio id="test6" name="test6" label="Testing 6" gap></v-radio>
-      <v-radio id="test7" name="test6" label="Testing 7" gap></v-radio>
-      <v-radio id="test8" name="test6" label="Testing 8" gap></v-radio>
-      <v-radio id="test9" name="test6" label="Testing 9" gap></v-radio>
-    </div>
-    <div>
-      <v-btn primary dark>Next</v-btn small>
-    </div>
-
     <h1 class="title">
-      This page is loaded from the {{ name }}
+      About Page
     </h1>
-    <h2 class="info" v-if="name === 'client'">
-      Please refresh the page
-    </h2>
-    <nuxt-link class="button" to="/">
-      Home page
-    </nuxt-link>
+
+    <v-row>
+      <v-col xs12 md12>
+        <v-subheader>Light</v-subheader>
+        <v-card class="grey lighten-4 z-depth-0">
+          <v-card-text>
+            <p>{{ ex8 || 'null' }}</p>
+
+            <v-radio
+              label="Radio 1"
+              primary
+              v-model="ex8"
+              value="radio-1"
+              light />
+
+            <v-radio
+              label="Radio 2"
+              primary
+              v-model="ex8"
+              value="radio-2"
+              light />
+          </v-card-text>
+        </v-card>
+      </v-col>
+    </v-row>
+
   </section>
 </template>
 <script>
@@ -35,7 +42,8 @@
   export default {
     data ({req}) {
       return {
-        name: req ? 'server' : 'client'
+        ex8: 'default',
+        ex9: {}
       }
     },
     head () {

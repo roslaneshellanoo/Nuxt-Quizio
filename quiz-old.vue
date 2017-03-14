@@ -72,7 +72,19 @@
                          :name="index"
                          v-model="userResponses[index]"
                   >
+                  <v-radio
+                    label="Radio 1"
+                    primary
+                    v-model="ex8"
+                    value="radio-1"
+                    light />
 
+                  <v-radio
+                    label="Radio 2"
+                    primary
+                    v-model="ex8"
+                    value="radio-2"
+                    light />
 
                   <div class="mu-radio-wrapper">
                     <div class="mu-ripple-wrapper mu-radio-ripple-wrapper"></div>
@@ -230,17 +242,11 @@
       // Return "true" count in userResponses
       score: function () {
         let right_answers = 0;
-
         let quizObj = this.quiz;
-
         this.userResponses.forEach(function (value, index) {
-
           if (quizObj.questions[index].answer == value) {
-
             right_answers++;
-
           }
-
         });
 
         return right_answers;
