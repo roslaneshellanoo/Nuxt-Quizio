@@ -5,6 +5,17 @@
     </h1>
     <div class="quiz-content">
 
+      <v-stepper v-model="activeStep">
+        <v-stepper-header>
+          <v-stepper-step step="1" :complete="activeStep > 1"></v-stepper-step>
+          <v-divider />
+          <v-stepper-step step="2" :complete="activeStep > 2"></v-stepper-step>
+          <v-divider />
+          <v-stepper-step step="3" :complete="activeStep > 3"></v-stepper-step>
+          <v-divider />
+          <v-stepper-step step="4" :complete="activeStep > 4"></v-stepper-step>
+        </v-stepper-header>
+      </v-stepper>
 
       <v-progress-circular v-show="spinner" indeterminate class="primary--text"/>
 
@@ -98,7 +109,7 @@
         let _this = this
         setTimeout(function () {
           _this.spinner = false
-          if (_this.userResponses[_this.activeStep] === false) {
+          if (_this.userResponses[_this.questionIndex] === false) {
             console.log('show me toast')
           } else {
             _this.questionIndex++
