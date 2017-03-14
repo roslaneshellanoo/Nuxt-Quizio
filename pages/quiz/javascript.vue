@@ -4,6 +4,10 @@
       Javascript quiz page
     </h1>
     <div class="quiz-content">
+
+
+      <v-progress-circular v-show="spinner" indeterminate class="primary--text"/>
+
       <div class="quiz-loop" v-for="(question, index) in randomQuiz">
         <!-- Hide all questions, show only the one with index === to current question index -->
         <div class="quiz-block" v-if="index === questionIndex">
