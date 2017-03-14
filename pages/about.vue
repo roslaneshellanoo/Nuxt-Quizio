@@ -2,34 +2,57 @@
 
   <section class="container">
 
-    <h1 class="title">
+    <h1 class="display-1">
       About Page
     </h1>
+    <br>
+    <v-stepper v-model="e1">
 
-    <v-row>
-      <v-col xs12 md12>
-        <v-subheader>Light</v-subheader>
-        <v-card class="grey lighten-4 z-depth-0">
-          <v-card-text>
-            <p>{{ ex8 || 'null' }}</p>
+      <v-stepper-header>
+        <v-stepper-step step="1" v-bind:complete="e1 > 1"></v-stepper-step>
+        <v-divider />
+        <v-stepper-step step="2" v-bind:complete="e1 > 2"></v-stepper-step>
+        <v-divider />
+        <v-stepper-step step="3"></v-stepper-step>
+        <v-divider />
+        <v-stepper-step step="4"></v-stepper-step>
+      </v-stepper-header>
 
-            <v-radio
-              label="Radio 1"
-              primary
-              v-model="ex8"
-              value="radio-1"
-              light />
+      <v-stepper-content step="1">
 
-            <v-radio
-              label="Radio 2"
-              primary
-              v-model="ex8"
-              value="radio-2"
-              light />
-          </v-card-text>
-        </v-card>
-      </v-col>
-    </v-row>
+        <p class="title">
+          First Question ?
+        </p>
+        <v-radio label="Radio 1" primary v-model="ex8" value="radio-1" light />
+        <v-radio label="Radio 2" primary v-model="ex8" value="radio-2" light />
+        <v-radio label="Radio 2" primary v-model="ex8" value="radio-3" light />
+        <v-radio label="Radio 2" primary v-model="ex8" value="radio-4" light />
+
+        <v-btn primary @click.native="e1 = 2">Continue</v-btn>
+        <v-btn flat>Cancel</v-btn>
+      </v-stepper-content>
+      <v-stepper-content step="2">
+
+        <v-radio label="Radio 1" primary v-model="ex8" value="radio-1" light />
+        <v-radio label="Radio 2" primary v-model="ex8" value="radio-2" light />
+        <v-radio label="Radio 2" primary v-model="ex8" value="radio-3" light />
+        <v-radio label="Radio 2" primary v-model="ex8" value="radio-4" light />
+
+        <v-btn primary @click.native="e1 = 3">Continue</v-btn>
+        <v-btn flat>Cancel</v-btn>
+      </v-stepper-content>
+      <v-stepper-content step="3">
+        <v-card class="grey lighten-1 z-depth-1 mb-5" height="200px" />
+        <v-btn primary @click.native="e1 = 4">Continue</v-btn>
+        <v-btn flat>Cancel</v-btn>
+      </v-stepper-content>
+      <v-stepper-content step="4">
+        <v-card class="grey lighten-1 z-depth-1 mb-5" height="200px" />
+        <v-btn primary @click.native="e1 = 1">Continue</v-btn>
+        <v-btn flat>Cancel</v-btn>
+      </v-stepper-content>
+    </v-stepper>
+    <br>
 
   </section>
 </template>
@@ -42,8 +65,8 @@
   export default {
     data ({req}) {
       return {
-        ex8: 'default',
-        ex9: {}
+        e1: '',
+        ex8: ''
       }
     },
     head () {

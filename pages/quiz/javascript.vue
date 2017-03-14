@@ -14,7 +14,7 @@
           <h4 class="question-title">
             <span v-html="question.text"></span>
           </h4>
-          <div class="text-code" v-if="question.textcode">
+          <div class="text-code" v-show="question.textcode">
             <pre><code>{{question.textcode}}</code></pre>
           </div>
           <br>
