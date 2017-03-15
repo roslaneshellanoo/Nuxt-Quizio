@@ -1,30 +1,32 @@
 <template>
   <section class="container">
-    <h1 class="title">
+    <h1 class="display-1 gradient-text text-center">
       Javascript quiz page
     </h1>
-    <div class="quiz-content">
+    <v-stepper v-model="activeStep">
+      <v-stepper-header>
+        <v-stepper-step step="1" :complete="activeStep > 1"></v-stepper-step>
+        <v-divider />
+        <v-stepper-step step="2" :complete="activeStep > 2"></v-stepper-step>
+        <v-divider />
+        <v-stepper-step step="3" :complete="activeStep > 3"></v-stepper-step>
+        <v-divider />
+        <v-stepper-step step="4" :complete="activeStep > 4"></v-stepper-step>
+      </v-stepper-header>
+    </v-stepper>
 
-      <v-stepper v-model="activeStep">
-        <v-stepper-header>
-          <v-stepper-step step="1" :complete="activeStep > 1"></v-stepper-step>
-          <v-divider />
-          <v-stepper-step step="2" :complete="activeStep > 2"></v-stepper-step>
-          <v-divider />
-          <v-stepper-step step="3" :complete="activeStep > 3"></v-stepper-step>
-          <v-divider />
-          <v-stepper-step step="4" :complete="activeStep > 4"></v-stepper-step>
-        </v-stepper-header>
-      </v-stepper>
+    <div class="quiz-content relative">
 
-      <v-progress-circular v-show="spinner" indeterminate class="primary--text"/>
+      <div v-show="spinner" class="quiz-spinner">
+        <v-progress-circular  indeterminate class="spinner primary--text"/>
+      </div>
 
-      <div class="quiz-loop" v-for="(question, index) in randomQuiz">
+      <v-card class="quiz-loop" v-for="(question, index) in randomQuiz">
         <!-- Hide all questions, show only the one with index === to current question index -->
         <div class="quiz-block" v-if="index === questionIndex">
-          <h4 class="question-title">
+          <h5 class="question-title">
             <span v-html="question.text"></span>
-          </h4>
+          </h5>
           <div class="text-code" v-show="question.textcode">
             <pre><code>{{question.textcode}}</code></pre>
           </div>
@@ -51,7 +53,7 @@
 
 
         </div>
-      </div>
+      </v-card>
     </div>
 
     <div class="score-block" v-if="questionIndex === quiz.questions.length">

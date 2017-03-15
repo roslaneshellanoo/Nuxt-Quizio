@@ -1,0 +1,69 @@
+a {
+  text-decoration: none;
+}
+
+.gradient-text {
+  -webkit-background-clip: text;
+  background-image: -webkit-linear-gradient(left,#3d8bff,#26559b);
+  background-image: linear-gradient(90deg,#3d8bff,#26559b);
+  -webkit-text-fill-color: transparent;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-hide {
+  text-indent: 110%;
+  white-space: nowrap;
+  overflow: hidden;
+  color: transparent;
+  text-shadow: none;
+}
+
+.text-truncate {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+
+
+@media (max-width: 47.99em) {
+
+  .m-text-left {
+    text-align: left;
+  }
+
+  .m-text-center {
+    text-align: center;
+  }
+
+  .m-text-right {
+    text-align: right;
+  }
+
+  .m-text-hide {
+    text-indent: 110%;
+    white-space: nowrap;
+    overflow: hidden;
+    color: transparent;
+    text-shadow: none;
+  }
+
+  .m-text-truncate {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+}
+

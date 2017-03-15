@@ -40,9 +40,9 @@
       </v-sidebar>
 
       <v-content>
-        <v-container fluid>
+        <div class="main-content">
           <nuxt/>
-        </v-container>
+        </div>
       </v-content>
     </main>
 
