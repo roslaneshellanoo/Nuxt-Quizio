@@ -6,19 +6,31 @@
     <v-stepper v-model="activeStep">
       <v-stepper-header>
         <v-stepper-step step="1" :complete="activeStep > 1"></v-stepper-step>
-        <v-divider />
+        <v-divider/>
         <v-stepper-step step="2" :complete="activeStep > 2"></v-stepper-step>
-        <v-divider />
+        <v-divider/>
         <v-stepper-step step="3" :complete="activeStep > 3"></v-stepper-step>
-        <v-divider />
+        <v-divider/>
         <v-stepper-step step="4" :complete="activeStep > 4"></v-stepper-step>
+      </v-stepper-header>
+    </v-stepper>
+
+    <v-stepper v-model="activeStep">
+      <v-stepper-header>
+        <v-stepper-step
+          :step="step"
+          :complete="activeStep > index+1"
+          v-for="(step, index) in steps"
+          :key="step"
+        ></v-stepper-step>
+        <v-divider/>
       </v-stepper-header>
     </v-stepper>
 
     <div class="quiz-content relative">
 
       <div v-show="spinner" class="quiz-spinner">
-        <v-progress-circular  indeterminate class="spinner primary--text"/>
+        <v-progress-circular indeterminate class="spinner primary--text"/>
       </div>
 
       <v-card class="quiz-loop" v-for="(question, index) in randomQuiz">
@@ -84,6 +96,7 @@
     data () {
       return {
         quiz,
+        steps: ['1', '2', '3', '4'],
         spinner: false,
         activeStep: 0,
         questionIndex: 0,
@@ -137,7 +150,7 @@
   }
 </script>
 
-<style scoped>
+<style >
 
   .title {
     margin-top: 2rem;
