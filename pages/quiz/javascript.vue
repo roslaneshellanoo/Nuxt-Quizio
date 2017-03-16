@@ -3,6 +3,7 @@
     <h1 class="display-1 gradient-text text-center">
       Javascript quiz page
     </h1>
+
     <v-stepper v-model="activeStep">
       <v-stepper-header>
         <v-stepper-step step="1" :complete="activeStep > 1"></v-stepper-step>
@@ -10,8 +11,6 @@
         <v-stepper-step step="2" :complete="activeStep > 2"></v-stepper-step>
         <v-divider/>
         <v-stepper-step step="3" :complete="activeStep > 3"></v-stepper-step>
-        <v-divider/>
-        <v-stepper-step step="4" :complete="activeStep > 4"></v-stepper-step>
       </v-stepper-header>
     </v-stepper>
 
@@ -96,7 +95,9 @@
     data () {
       return {
         quiz,
-        steps: ['1', '2', '3', '4'],
+        steps: quiz.questions.map(function (v, i) {
+          return i + 1
+        }),
         spinner: false,
         activeStep: 0,
         questionIndex: 0,
@@ -104,7 +105,7 @@
       }
     },
     mounted: function () {
-      console.log(this.$route.path)
+      console.log(this.quiz.questions)
     },
     computed: {
       randomQuiz: function () {
@@ -150,7 +151,7 @@
   }
 </script>
 
-<style >
+<style>
 
   .title {
     margin-top: 2rem;
