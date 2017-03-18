@@ -6,23 +6,14 @@
 
     <v-stepper v-model="activeStep">
       <v-stepper-header>
-        <v-stepper-step step="1" :complete="activeStep > 1"></v-stepper-step>
-        <v-divider/>
-        <v-stepper-step step="2" :complete="activeStep > 2"></v-stepper-step>
-        <v-divider/>
-        <v-stepper-step step="3" :complete="activeStep > 3"></v-stepper-step>
-      </v-stepper-header>
-    </v-stepper>
-
-    <v-stepper v-model="activeStep">
-      <v-stepper-header>
-        <v-stepper-step
-          :step="step"
-          :complete="activeStep > index+1"
-          v-for="(step, index) in steps"
-          :key="step"
-        ></v-stepper-step>
-        <v-divider/>
+        <template v-for="(step, index) in steps">
+          <v-stepper-step
+            :step="step"
+            :key="step"
+            :complete="activeStep > index+1"
+          ></v-stepper-step>
+          <v-divider></v-divider>
+        </template>
       </v-stepper-header>
     </v-stepper>
 
@@ -99,7 +90,7 @@
           return i + 1
         }),
         spinner: false,
-        activeStep: 0,
+        activeStep: 1,
         questionIndex: 0,
         userResponses: new Array(quiz.questions.length).fill(false)
       }

@@ -1,4 +1,15 @@
 .index-page{
+
+   header {
+    width: 100%;
+    position: fixed;
+    z-index: 97;
+
+     .toolbar {
+       background: transparent;
+       box-shadow: none;
+     }
+  }
   .main-banner {
     background: url(~assets/img/cosmos.jpg);
     background-attachment: fixed;
