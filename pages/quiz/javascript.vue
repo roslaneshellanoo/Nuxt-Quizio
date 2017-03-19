@@ -41,8 +41,6 @@
                      :name="'list-' + index"
                      v-model="userResponses[index]"
                      :value="response.id"
-                     light
-                     primary
               />
               {{response.text}} <br>
             </li>
