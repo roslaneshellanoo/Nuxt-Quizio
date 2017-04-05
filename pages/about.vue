@@ -63,7 +63,7 @@
 //  }
 
   export default {
-    data ({req}) {
+    data () {
       return {
         e1: '',
         ex8: ''
