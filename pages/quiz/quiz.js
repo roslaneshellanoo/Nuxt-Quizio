@@ -18,7 +18,7 @@ function sayHi() {
 }
 
 setTimeout(function() {
-  var name = "James";
+  var name = "James';
   sayHi();
 }, 1000);
 `,
@@ -82,7 +82,7 @@ const quiz = {
           mark: false
         },
         {
-          text: '"This is string"',
+          text: 'This is string',
           id: 2,
           mark: true
         },
@@ -103,7 +103,7 @@ const quiz = {
     },
 
     {
-      text: "Question 3",
+      text: 'Question 3',
       textcode: question3,
       responses: [
 
