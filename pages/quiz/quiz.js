@@ -82,7 +82,7 @@ const quiz = {
           mark: false
         },
         {
-          text: '"This is string"',
+          text: `"This is string"`,
           id: 2,
           mark: true
         },
