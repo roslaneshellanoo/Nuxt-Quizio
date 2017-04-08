@@ -1,3 +1,5 @@
+const {join} = require('path');
+
 module.exports = {
   /*
    ** Headers of the page
@@ -19,6 +21,7 @@ module.exports = {
    */
   css: [
     {src: 'vuetify/dist/vuetify.min.css'},
+   // { src: join(__dirname, '~assets/scss/main.scss'), lang: 'scss'},
     {src: '~assets/scss/main.scss', lang: 'scss'}
   ],
   /*
