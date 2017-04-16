@@ -25,14 +25,16 @@
       <v-sidebar class="" drawer v-model="sidebar">
         <v-toolbar class="sidebar-logo">
           <v-toolbar-side-icon @click.native.stop="sidebar = !sidebar"/>
-          <v-toolbar-title class="">
-            Quizio.io
+          <v-toolbar-title>
+            <nuxt-link class="white--text" to="/">
+              Quizio.io
+            </nuxt-link>
           </v-toolbar-title>
         </v-toolbar>
 
         <v-list dense>
           <v-list-item v-for="item in items">
-            <v-list-tile ripple>
+            <v-list-tile :href="item.href" ripple>
               <v-list-tile-title  v-text="item.title"/>
             </v-list-tile>
           </v-list-item>
