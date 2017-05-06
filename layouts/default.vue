@@ -10,7 +10,7 @@
           </nuxt-link>
         </v-toolbar-title>
         <v-toolbar-items class="hidden-md-and-down">
-          <v-toolbar-item v-for="item in items" ripple  :router="true" :href="item.href">
+          <v-toolbar-item v-for="(item, index) in items" :key="item" ripple  :router="true" :href="item.url">
               {{item.title}}
           </v-toolbar-item>
         </v-toolbar-items>
@@ -22,21 +22,24 @@
 
     <main>
 
-      <v-sidebar class="" drawer v-model="sidebar">
+      <v-sidebar class="grey lighten-4" drawer v-model="sidebar">
         <v-toolbar class="sidebar-logo">
           <v-toolbar-side-icon @click.native.stop="sidebar = !sidebar"/>
-          <v-toolbar-title class="">
-            Quizio.io
+          <v-toolbar-title>
+            <nuxt-link class="white--text" to="/">
+              Quizio.io
+            </nuxt-link>
           </v-toolbar-title>
         </v-toolbar>
 
-        <v-list dense>
-          <v-list-item v-for="item in items">
-            <v-list-tile ripple>
-              <v-list-tile-title  v-text="item.title"/>
+        <v-list>
+          <v-list-item v-for="(item, index) in items" :key="item">
+            <v-list-tile :router="true" :href="item.url" ripple>
+              <v-list-tile-title   v-text="item.title"/>
             </v-list-tile>
           </v-list-item>
         </v-list>
+
       </v-sidebar>
 
       <v-content>
@@ -65,11 +68,11 @@
         items: [
           {
             title: 'Javascript Quiz',
-            href: '/quiz/javascript'
+            url: '/quiz/javascript'
           },
           {
             title: 'About',
-            href: '/about'
+            url: '/about'
           }
         ]
       }
@@ -78,6 +81,10 @@
 </script>
 
 <style>
+
+  .sidebar .list__tile {
+    color: #424242;
+  }
 
   .button, .button:visited {
     display: inline-block;

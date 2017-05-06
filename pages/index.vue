@@ -19,11 +19,30 @@
 
       <nuxt-link class="button" to="/about">
         About page
+
+
+
       </nuxt-link>
     </section>
   </div>
 
 </template>
+
+<script>
+
+  export default {
+
+    mounted () {
+      this.$nextTick(function () {
+        if (process.BROWSER_BUILD) {
+          // window.particlesJS('particles-js', particlesData)
+        }
+      })
+    }
+
+  }
+
+</script>
 
 <style scoped>
 

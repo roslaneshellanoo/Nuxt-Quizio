@@ -23,7 +23,7 @@
         <v-progress-circular indeterminate class="spinner primary--text"/>
       </div>
 
-      <v-card class="quiz-loop" v-for="(question, index) in randomQuiz">
+      <v-card class="quiz-loop" v-for="(question, index) in randomQuiz" :key="question">
         <!-- Hide all questions, show only the one with index === to current question index -->
         <div class="quiz-block" v-if="index === questionIndex">
           <h5 class="question-title">
@@ -35,7 +35,7 @@
           <br>
 
           <ul class="answers-block">
-            <li v-for="response in question.responses">
+            <li v-for="(response, index) in question.responses" :key="response">
               <input type="radio"
                      :label="response.text"
                      :name="'list-' + index"
@@ -94,7 +94,7 @@
       }
     },
     mounted: function () {
-      console.log(this.quiz.questions)
+      // console.log(this.quiz.questions)
     },
     computed: {
       randomQuiz: function () {
